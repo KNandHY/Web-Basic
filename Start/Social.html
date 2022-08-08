@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Social Media</title>
+		<style type="text/css">
+			a.listofnews:hover,
+			a.listofnews:active {
+				font-size: 150%;
+				text-decoration: underline;
+			}
+			a.faq:hover,
+			a.faq:active {
+				font-size: 150%;
+				text-decoration: underline;
+				color: green;
+			}
+			a.topusers:hover,
+			a.topusers:active {
+				font-size: 150%;
+				text-decoration: underline;
+				background-color: orange;
+			}
+			div .frame {
+				width: 80%;
+				height: auto;
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 18px;
+				padding: 20px;
+				background: rgb(167, 162, 162);
+			}
+			div.polaroid {
+				display: block;
+				width: 80%;
+				background-color: white;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				margin-bottom: 25px;
+				border-radius: 18px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			div.container {
+				text-align: center;
+				padding: 10px 20px;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				/* border-radius: 18px; */
+			}
+			.button {
+				color: red;
+				background-color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 32px;
+				margin: 4px 2px;
+				cursor: pointer;
+				border-radius: 12px;
+			}
+			ul.toplists {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #333333;
+			}
+			ul.toplists li {
+				float: left;
+			}
+			ul.toplists li a {
+				font-size: 36px;
+				display: block;
+				color: white;
+				text-align: center;
+				padding: 17px;
+				text-decoration: none;
+			}
+			ul.toplists li a:hover {
+				background-color: blue;
+			}
+			ul.listofnews li {
+				margin-left: 15%;
+			}
+			ul.listofnews li a {
+				font-size: 24px;
+				color: white;
+				text-decoration: none;
+			}
+			#maintop > .center {
+				position: absolute;
+				top: 50%;
+				left: 40%;
+				text-align: center;
+			}
+			#main {
+				width: 100%;
+				height: 1000px;
+				background: black;
+			}
+			/* div top */
+			#maintop {
+				width: 100%;
+				height: 150px;
+				background: rgb(137, 137, 184);
+				position: relative;
+			}
+			#maintop > .logo {
+				width: 10%;
+				height: 100%;
+				background: yellow;
+				float: left;
+			}
+			#maintop > .login {
+				width: 90%;
+				height: 50%;
+				background: purple;
+				float: left;
+			}
+			#maintop > .information {
+				width: 90%;
+				height: 50%;
+				background: aqua;
+				float: left;
+				text-align: center;
+			}
+			/* div bottom */
+			#mainbottom {
+				width: 100%;
+				height: 1850px;
+				background: red;
+			}
+			#mainbottom > .listofnews {
+				width: 25%;
+				height: 100%;
+				background: green;
+				float: left;
+			}
+			#mainbottom > .maininformation {
+				width: 50%;
+				height: 100%;
+				background: blue;
+				float: left;
+				position: relative;
+			}
+			#mainbottom > .faq_topusers {
+				width: 25%;
+				height: 100%;
+				background: grey;
+				float: left;
+				position: relative;
+			}
+			#mainbottom > .faq_topusers > .faq {
+				width: 100%;
+				height: 10%;
+				background: rgb(231, 206, 206);
+				position: relative;
+			}
+			#mainbottom > .faq_topusers > .topusers {
+				width: 100%;
+				height: auto;
+				background: rgb(29, 203, 226);
+				margin-top: auto;
+				position: fixed;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div id="maintop">
+				<div class="logo">
+					<img
+						src="imgSocial/KNlogored.png"
+						alt="This is a logo"
+						style="height: 150px"
+					/>
+				</div>
+				<div class="login" style="text-align: right">
+					<a href="#" class="button">Đăng nhập / Đăng ký</a>
+				</div>
+				<div class="center">
+					<div class="information">
+						<ul class="toplists">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">News</a></li>
+							<li><a href="#">Support</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="mainbottom">
+				<div class="listofnews">
+					<ul class="listofnews" style="font-size: 32px">
+						<h2>List of news:</h2>
+						<li><a class="listofnews" href="#">This is title a</a></li>
+						<li><a class="listofnews" href="#">This is title b</a></li>
+						<li><a class="listofnews" href="#">This is title c</a></li>
+					</ul>
+				</div>
+				<div class="maininformation">
+					<div class="center">
+						<div class="frame">
+							<div class="polaroid">
+								<img
+									src="imgSocial/waterfall-clean-tourist-blue-flow-asian.jpg"
+									alt="this is an image"
+								/>
+								<div class="container">
+									<p>Waterfall</p>
+								</div>
+							</div>
+						</div>
+						<br />
+						<div class="frame">
+							<h2>ABOUT US</h2>
+							<p>
+								This is all infomation about us. Lorem ipsum dolor sit
+								amet consectetur adipisicing elit. Facilis, beatae nihil
+								sequi iste ad minima architecto aperiam nobis, dicta
+								expedita eum a unde temporibus! Dolorem fugiat maiores
+								perferendis itaque tempore.
+							</p>
+						</div>
+						<br />
+						<div class="frame">
+							<h2>CONTACT</h2>
+							<ul style="font-size: 18px">
+								<li>Phone number: +84 123 123 123</li>
+								<li>Email: <u>nhknguyen2512@gmail.com</u></li>
+								<li>Phone number: +84 123 123 123</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="faq_topusers">
+					<div class="faq">
+						<h2>Câu hỏi thường gặp</h2>
+						<ul style="list-style-type: none; text-decoration: none">
+							<li><a class="faq" href="#">Câu hỏi số 1</a></li>
+							<li><a class="faq" href="#">Câu hỏi số 2</a></li>
+							<li><a class="faq" href="#">Câu hỏi số 3</a></li>
+							<li><a class="faq" href="#">Câu hỏi số 4</a></li>
+							<li><a class="faq" href="#">Câu hỏi số 5</a></li>
+							<li><a class="faq" href="#">Câu hỏi số 6</a></li>
+						</ul>
+					</div>
+					<div class="topusers">
+						<h2>Thành viên hoạt động tích cực</h2>
+						<ul style="list-style-type: number; text-decoration: none">
+							<li><a class="topusers" href="#">Người số 1</a></li>
+							<li><a class="topusers" href="#">Người số 2</a></li>
+							<li><a class="topusers" href="#">Người số 3</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

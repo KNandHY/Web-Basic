@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Bài tập số 2</title>
+		<style type="text/css">
+			/* div tong */
+			#container {
+				width: 100%;
+				height: 800px;
+				/* background: green; */
+			}
+
+			/* div top */
+			#container > .top {
+				width: 100%;
+				height: 5%;
+				/* background: yellow; */
+			}
+			/* #container > .top > .upper {
+				width: 100%;
+				height: 50%;
+				background: rgb(87, 90, 92);
+			}
+			#container > .top > .lower {
+				width: 100%;
+				height: 50%;
+				background: rgb(81, 212, 88);
+			} */
+
+			/* div bottom */
+			#container > .bottom {
+				width: 100%;
+				height: 95%;
+				/* background: rgb(76, 222, 241); */
+				position: relative;
+			}
+			#container > .bottom > .left {
+				width: 45%;
+				height: 100%;
+				/* background: rgb(76, 147, 241); */
+				float: left;
+			}
+			#container > .bottom > .left > .leftSide {
+				width: 85%;
+				height: 100%;
+				/* background: rgb(76, 147, 241); */
+				float: left;
+			}
+			#container > .bottom > .left > .leftSide > .above {
+				width: 100%;
+				height: 7%;
+				/* background: rgb(241, 76, 76); */
+				float: left;
+			}
+			#container > .bottom > .left > .leftSide > .middle {
+				width: 100%;
+				height: 63%;
+				/* background: rgb(255, 255, 255); */
+				float: left;
+			}
+			#container > .bottom > .left > .leftSide > .middle > .left {
+				width: 20%;
+				height: 100%;
+				/* background: rgb(150, 73, 73); */
+				float: left;
+			}
+			#container > .bottom > .left > .leftSide > .middle > .right {
+				width: 80%;
+				height: 100%;
+				/* background: rgb(248, 0, 0); */
+				float: left;
+			}
+			#container > .bottom > .left > .leftSide > .middle > .right > .upper {
+				width: 100%;
+				height: 10%;
+				/* background: rgb(120, 168, 66); */
+				float: left;
+			}
+			#container > .bottom > .left > .leftSide > .middle > .right > .lower {
+				width: 100%;
+				height: 90%;
+				/* background: rgb(110, 217, 224); */
+				float: left;
+			}
+			#container > .bottom > .left > .leftSide > .bottom {
+				width: 100%;
+				height: 30%;
+				/* background: rgb(206, 145, 145); */
+				float: left;
+			}
+			#container > .bottom > .left > .rightSide {
+				width: 15%;
+				height: 100%;
+				/* background: rgb(1, 27, 61); */
+				float: left;
+			}
+			#container > .bottom > .left > .rightSide > .upper {
+				width: 100%;
+				height: 7%;
+				/* background: rgb(21, 115, 238); */
+				float: left;
+			}
+			#container > .bottom > .left > .rightSide > .lower {
+				width: 100%;
+				height: 93%;
+				/* background: rgb(153, 187, 231); */
+				float: left;
+			}
+			#container > .bottom > .right {
+				width: 55%;
+				height: 100%;
+				/* background: rgb(76, 241, 90); */
+				float: left;
+				position: relative;
+			}
+			#container > .bottom > .right > .leftSide {
+				width: 15%;
+				height: 100%;
+				/* background: rgb(96, 82, 221); */
+				float: left;
+				position: relative;
+			}
+			#container > .bottom > .right > .leftSide > .above {
+				width: 100%;
+				height: 7%;
+				/* background: rgb(119, 243, 175); */
+				float: left;
+				z-index: 1;
+				position: absolute;
+			}
+			#container > .bottom > .right > .leftSide > .below {
+				width: 100%;
+				height: 93%;
+				/* background: rgb(115, 110, 160); */
+				position: absolute;
+				top: 7%;
+			}
+			#container > .bottom > .right > .leftSide > .below > .truyenthuyet {
+				width: 100%;
+				height: 500px;
+				/* background: rgb(57, 38, 228); */
+				position: absolute;
+				bottom: 0;
+			}
+			#container > .bottom > .right > .rightSide {
+				width: 85%;
+				height: 100%;
+				/* background: rgb(222, 76, 241); */
+				float: left;
+			}
+			#container > .bottom > .right > .rightSide > .left {
+				width: 90%;
+				height: 100%;
+				/* background: rgb(76, 241, 219); */
+				float: left;
+				position: relative;
+			}
+			#container > .bottom > .right > .rightSide > .left > .upper {
+				width: 100%;
+				height: 30%;
+				/* background: rgb(53, 53, 53); */
+				float: left;
+				position: relative;
+			}
+			#container > .bottom > .right > .rightSide > .left > .upper > .buom {
+				width: 100px;
+				height: 100px;
+				/* background: rgb(192, 59, 59); */
+				position: absolute;
+				z-index: 1;
+				left: 7%;
+			}
+			#container
+				> .bottom
+				> .right
+				> .rightSide
+				> .left
+				> .upper
+				> .hoihoalan {
+				width: 160px;
+				height: 30%;
+				/* background: rgb(235, 161, 161); */
+				float: left;
+				position: absolute;
+			}
+			#container > .bottom > .right > .rightSide > .left > .upper > .mau {
+				width: 55%;
+				height: 10%;
+				/* background: rgb(99, 16, 16); */
+				float: left;
+				position: absolute;
+			}
+
+			#container > .bottom > .right > .rightSide > .left > .lower {
+				width: 100%;
+				height: 70%;
+				/* background: rgb(241, 76, 178); */
+				float: left;
+			}
+			#container > .bottom > .right > .rightSide > .left > .lower > .hoa {
+				width: 70%;
+				height: 70%;
+				/* background: rgb(76, 241, 117); */
+				float: left;
+			}
+			#container > .bottom > .right > .rightSide > .left > .lower > .buom {
+				width: 180px;
+				height: 180px;
+				/* background: rgb(76, 128, 241); */
+				float: left;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+			#container > .bottom > .right > .rightSide > .right {
+				width: 10%;
+				height: 100%;
+				/* background: rgb(241, 211, 76); */
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div class="top"></div>
+			<div class="bottom">
+				<div class="left">
+					<div class="leftSide">
+						<div class="above"></div>
+						<div class="middle">
+							<div class="left"></div>
+							<div class="right">
+								<div class="upper" style="text-align: center">
+									<form>
+										<select>
+											<option>http://www.ClbLanTp.com.vn</option>
+										</select>
+									</form>
+								</div>
+								<div class="lower" style="text-align: justify">
+									<h2>HOA MỘC LAN</h2>
+									<span>
+										"Ở Nhật Bản có một người con gái tên là Cây cỏ mồ
+										côi cả cha lẫn mẹ. Nhà nghèo, ngay từ khi còn nhỏ
+										nàng đã phải tự đi làm để kiếm sống. Nàng phải làm
+										hoa giấy đem ra phố bán. Nhưng hoa bán đã nhiều,
+										mà tiền thu về chẳng đáng là bao. Khi đã ra dáng
+										một thiếu nữ. Cây cỏ cũng không có đủ tiền sắm nổi
+										một bộ kimôno mà các cô con nhà quý phái vẫn mặc.
+										<br />
+										<br />
+										Một đêm nọ khi Cây cỏ đang mải làm việc trong
+										phòng của mình, bỗng có một con vẹt bay đến đậu
+										trên bậc cửa sổ. Đôi cánh màu xanh của nó đã nhợt
+										nhạt, có lẽ nó đã già song vẫn còn đủ minh mẫn và
+										biết nói tiếng người. - Đừng đuổi ta, ta sẽ tiết
+										lo cho nàng một điều bí mật về cách làm giàu.
+										<br />
+										<br />
+										- Vẹt yêu quý ơi, cớ sao ta lại đuổi mi – Cây cỏ
+										buồn bã mỉm cười - ở đời ta chẳng còn biết thộ lộ
+										tâm tình với ai, thế mà mi lại nói được tiếng
+										người. Cứ ở lại đây, cùng chia nghèo, sẻ khó với
+										ta, còn sự giàu sang, phú qúy tốt nhất là chẳng
+										nên màng tới, vì ta rất xa lạ với chuyện ấy.
+										<br />
+										<br />
+										- Đa tạ Cây cỏ tốt bụng - Vẹt gật gù- Trước khi đi
+										tìm chủ mới, ta đã chăm chú theo dỏi các cô gái
+										bán hoa, và ta đã thấy nàng tặng bông hoa đẹp nhất
+										của mình cho một cô gái nghèo như thế nào rồi. Cô
+										gái nghèo ấy không có tiền nhưng lại rất muốn làm
+										cho người bà ốm yếu của mình được thanh thản hài
+										lòng. Nhưng vì sao ngươi lại phải đi t́m chủ mới? –
+										Cây cỏ hỏi - Phải chăng chủ củ không tốt với mi?
+
+										<br />
+										<br />
+										- Bà ta đã qua đời - Vẹt đau đơn báo tin, rồi im
+										lặng giây lát
+										<br />
+										<br />
+
+										- Bà ta chết vì tham lam.
+										<br />
+										<br />
+
+										- Bà ấy nghèo lắm a? – Cây cỏ hỏi tiếp.
+										<br />
+										<br />
+
+										- Không, rất giàu là đằng khác. Song với bà như
+										thế còn quá ít. Bà đã bán đến giọt máu cuối cùng
+										để lấy vàng - Vẹt nguẩy vẻ trách móc.
+										<br />
+										<br />
+
+										- Đổi máu lấy vàng là thế nào, ta không hiểu? –
+										Cây cỏ ngạc nhiên.
+										<br />
+										<br />
+
+										- Chuyện là thế này. Bà chủ của ta cũng làm nghề
+										bán hoa giấy như nàng, song có một mụ phù thuỷ đã
+										tiết lộ cho bà một bí mật về cách làm cho hoa giấy
+										trở thành hoa tươi, nghĩa là phải lấy máu của mình
+										tiếp sức cho các cành hoa. Chính nàng cũng thừa
+										hiểu hoa tươi quý như thế nào rồi. Chẳng bao lâu
+										bà chủ trở nên giàu có. Lúc đó mụ phù thuỷ đã báo
+										trước cho bà ta rằng, dù thế nào cũng chớ có hiến
+										đến giọt máu cuối cùng. Nhưng với bà chủ của ta,
+										dầu có tích góp được bao nhiêu của cải cũng vẫn cứ
+										la ít. Và thế là khi có một vị khách ngoại bang
+										hứa cho bà một khoản tiền lớn nếu bà bằng lòng
+										tiếp thêm sinh lực cho hoa. Bà chủ đã không ngần
+										ngại ngay ca3 đến giọt máu cuối cùng để có thêm
+										nhiều tiền và bà đã phải chuốc lấy cái chết. Số
+										của cải bà để lại trở thành miếng mồi ngon cho đám
+										họ hàng xâu xé nhau. …"
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="bottom" style="text-align: right">
+							<img src="CSSBuoi1/image 2/la1.jpg" alt="la1" />
+							<img src="CSSBuoi1/image 2/la2.jpg" alt="la2" />
+							<img src="CSSBuoi1/image 2/la3.jpg" alt="la3" />
+						</div>
+					</div>
+					<div class="rightSide">
+						<div class="upper" style="border-bottom-style: dotted"></div>
+						<div class="lower"></div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="leftSide">
+						<div class="above" style="border-bottom-style: dotted"></div>
+						<div class="below">
+							<div class="truyenthuyet">
+								<img
+									src="CSSBuoi1/image 2/truyenthuyet.gif"
+									alt="truyen thuyet"
+								/>
+							</div>
+						</div>
+					</div>
+					<div class="rightSide">
+						<div class="left">
+							<div class="upper" style="text-align: right">
+								<div class="buom">
+									<img src="CSSBuoi1/image 2/buom1.gif" alt="buom1" />
+								</div>
+								<div class="hoihoalan" style="left: 0px">
+									<img
+										src="CSSBuoi1/image 2/HoiLan.gif"
+										alt="hoilan"
+									/>
+								</div>
+								<div class="mau" style="right: 0px">
+									<img src="CSSBuoi1/image 2/mau.gif" alt="mau" />
+								</div>
+							</div>
+							<div class="lower">
+								<div class="hoa">
+									<img src="CSSBuoi1/image 2/hoa.jpg" alt="hoa" />
+								</div>
+								<div class="buom">
+									<img src="CSSBuoi1/image 2/buom4.gif" alt="buom4" />
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							<img src="CSSBuoi1/image 2/lephai.jpg" alt="lephai" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
