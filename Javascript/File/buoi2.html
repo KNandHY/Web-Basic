@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS buỔi 2</title>
+		<style type="text/css">
+			div#container {
+				width: 40%;
+				height: auto;
+				margin: auto;
+				text-align: center;
+				padding: 20px;
+				border-radius: 20px;
+				background-color: rgb(55, 217, 246);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<h2>Nhập số bất kỳ</h2>
+			<form>
+				<input
+					id="nhap_so"
+					type="number"
+					placeholder="Input number here..."
+				/>
+				<br />
+				<br />
+				<button id="checkBtn" onclick="check()" type="button">
+					Kiểm tra
+				</button>
+			</form>
+			<br />
+			<div id="result"></div>
+			<div id="result_pn"></div>
+			<div id="result_negative_number"></div>
+			<div id="result_typeofnumber"></div>
+			<div id="result_primenumber"></div>
+			<div id="count"></div>
+		</div>
+		<script>
+			var count = 0;
+			var numberInput = document.getElementById("nhap_so");
+			// nhấn phím enter
+			numberInput.addEventListener("keypress", pressEnter);
+			function pressEnter(event) {
+				if (event.key === "Enter") {
+					event.preventDefault();
+					document.getElementById("checkBtn").click();
+				}
+			}
+			function check() {
+				let number = parseFloat(document.getElementById("nhap_so").value);
+				if (isNaN(number)) {
+					document.getElementById("result").innerHTML =
+						"Hãy nhập số bất kỳ";
+					document.getElementById("result_pn").innerHTML = "";
+					document.getElementById("result_negative_number").innerHTML = "";
+					document.getElementById("result_typeofnumber").innerHTML = "";
+					document.getElementById("result_primenumber").innerHTML = "";
+					console.log(number);
+				} else {
+					// Kiểm tra số thập phân và chẵn lẻ
+					if (number === parseInt(number)) {
+						if (number % 2 === 0) {
+							document.getElementById("result").innerHTML =
+								"Đây là số chẵn";
+						} else if (number % 2 === 1) {
+							document.getElementById("result").innerHTML =
+								"Đây là số lẻ";
+						}
+						document.getElementById("result_typeofnumber").innerHTML =
+							"Đây là số nguyên";
+					} else {
+						document.getElementById("result_typeofnumber").innerHTML =
+							"Đây là số thập phân";
+						document.getElementById("result").innerHTML = "";
+					}
+					// Kiểm tra số nguyên tố
+					if (number === parseInt(number) && number >= 2) {
+						if (
+							number == 2 ||
+							number == 3 ||
+							number == 5 ||
+							number == 7
+						) {
+							document.getElementById("result_primenumber").innerHTML =
+								"Đây là số nguyên tố";
+						} else if (
+							number != 2 &&
+							number != 3 &&
+							number != 5 &&
+							number != 7 &&
+							number % 2 != 0 &&
+							number % 3 != 0 &&
+							number % 5 != 0 &&
+							number % 7 != 0 &&
+							number % Math.sqrt(number) != 0
+						) {
+							document.getElementById("result_primenumber").innerHTML =
+								"Đây là số nguyên tố";
+						} else {
+							document.getElementById("result_primenumber").innerHTML =
+								"Đây không phải là số nguyên tố";
+						}
+					} else {
+						document.getElementById("result_primenumber").innerHTML =
+							"Chưa đạt điều kiện để xác định số nguyên tố";
+					}
+					// In ra số âm
+					if (number < 0) {
+						document.getElementById("result_pn").innerHTML =
+							"Đây là số âm";
+						document.getElementById("result_negative_number").innerHTML =
+							"";
+						for (let so_am = number; so_am <= 1; so_am++) {
+							document.getElementById(
+								"result_negative_number"
+							).innerHTML += "Số âm: " + so_am + "<br/>";
+						}
+					} else {
+						document.getElementById("result_pn").innerHTML =
+							"Đây là số dương";
+						document.getElementById("result_negative_number").innerHTML =
+							"";
+					}
+					// Kiểm tra số lần nhập số
+
+					count += 1;
+					document.getElementById("count").innerHTML =
+						"Tổng số lần nhập số: " + count;
+					console.log(number);
+				}
+			}
+		</script>
+	</body>
+</html>
