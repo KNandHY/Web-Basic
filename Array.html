@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Array</title>
+		<style type="text/css">
+			div#main {
+				width: 100%;
+				height: 1000px;
+				/* background-color: blue; */
+			}
+			div#bai1 {
+				width: 50%;
+				height: 50%;
+				/* background-color: rgb(72, 72, 98); */
+				float: left;
+			}
+			div#bai2 {
+				width: 50%;
+				height: 50%;
+				/* background-color: rgb(197, 197, 237); */
+				float: left;
+			}
+			div#bai1 > div.text {
+				display: inline-block;
+				margin: auto;
+				padding: 15px;
+			}
+			table,
+			th,
+			td {
+				border: 1px solid rgb(202, 74, 74);
+				text-align: center;
+			}
+			div.center {
+				width: 70%;
+				display: block;
+				margin: auto;
+				padding: 15px;
+			}
+			div.container {
+				width: 80%;
+				height: auto;
+				background-color: rgb(0, 225, 255);
+				border-radius: 20px;
+				margin: auto;
+				padding: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div id="bai1">
+				<div class="container">
+					<div class="center" style="width: 80%">
+						<h1>Bài tập 1</h1>
+						<h2 style="text-align: center">Hãy nhập một số bất kỳ</h2>
+						<form style="text-align: center">
+							<input
+								id="inputnumber1"
+								type="number"
+								placeholder="Input number here"
+							/>
+							<br />
+							<br />
+							<button onclick="add1()" type="button">
+								Thêm vào mảng
+							</button>
+							<button onclick="print1()" type="button">In</button>
+							<button onclick="print1_color()" type="button">
+								In theo màu
+							</button>
+							<button onclick="check_array1_primeNumber()" type="button">
+								In ra số nguyên tố
+							</button>
+						</form>
+						<br />
+						<div class="text">
+							<div id="result1"></div>
+							<div id="result1_even"></div>
+							<div id="result1_odd"></div>
+							<div id="result1_sum"></div>
+							<div id="result1_max_number"></div>
+							<div id="result1_primeNumber"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="bai2">
+				<div class="container">
+					<div class="center">
+						<h1>Bài tập 2</h1>
+						<form style="text-align: center">
+							<table style="text-align: center">
+								<tr></tr>
+								<th colspan="2">Phát sinh và tính toán</th>
+								<br />
+								<tr>
+									<td>Nhập số phần tử</td>
+									<td>
+										<input
+											type="number"
+											placeholder="Nhập số phần tử"
+											id="arraylength"
+										/>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>
+										<button type="button" onclick="calculate()">
+											Phát sinh và tính toán
+										</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Mảng</td>
+									<td>
+										<input
+											type="text"
+											id="displayArray2"
+											readonly
+											value="Array2"
+										/>
+									</td>
+								</tr>
+								<tr>
+									<td>GTLN (MAX) trong mảng</td>
+									<td>
+										<input
+											type="text"
+											id="displayMaxNumber"
+											readonly
+											value="Max"
+										/>
+									</td>
+								</tr>
+								<tr>
+									<td>GTNN (MIN) trong mảng</td>
+									<td>
+										<input
+											type="text"
+											id="displayMinNumber"
+											readonly
+											value="Min"
+										/>
+									</td>
+								</tr>
+								<tr>
+									<td>Tổng mảng</td>
+									<td>
+										<input
+											type="text"
+											id="displaySum"
+											readonly
+											value="Sum"
+										/>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										(<font color="red">Ghi chú:</font> Các phần tử
+										trong mảng sẽ có giá trị từ 0 đến 20)
+									</td>
+									<td></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var array1 = [];
+			function add1() {
+				let number1 = parseInt(
+					document.getElementById("inputnumber1").value
+				);
+				let a;
+				// console.log(number1);
+				if (isNaN(number1) || number1.toString() == "") {
+					document.getElementById("result1").innerHTML = "Xin hãy nhập số";
+				} else {
+					array1.push(number1);
+					a = number1;
+					document.getElementById(
+						"result1"
+					).innerHTML = `Đã thêm phần tử ${a} vào mảng`;
+					document.getElementById("inputnumber1").value = "";
+				}
+				document.getElementById("result1_sum").innerHTML = "";
+				document.getElementById("result1_even").innerHTML = "";
+				document.getElementById("result1_odd").innerHTML = "";
+				document.getElementById("result1_max_number").innerHTML = "";
+				document.getElementById("result1_primeNumber").innerHTML = "";
+			}
+			function print1() {
+				document.getElementById("result1_sum").innerHTML = "";
+				document.getElementById("result1_even").innerHTML = "";
+				document.getElementById("result1_odd").innerHTML = "";
+				document.getElementById("result1_max_number").innerHTML = "";
+				document.getElementById(
+					"result1"
+				).innerHTML = `Các phần tử trong mảng là {${array1}}`;
+				// console.log(array1);
+				let array1_even = [];
+				let array1_odd = [];
+				let array1_sum = 0;
+				for (var i = 0; i < array1.length; i++) {
+					array1_sum += array1[i];
+					document.getElementById(
+						"result1_sum"
+					).innerHTML = `Tổng của mảng là ${array1_sum}`;
+					if (array1[i] % 2 == 0) {
+						array1_even.push(array1[i]);
+						document.getElementById(
+							"result1_even"
+						).innerHTML = `Số phần tử chẵn trong mảng là [${array1_even}]`;
+					} else if (array1[i] % 2 != 0) {
+						array1_odd.push(array1[i]);
+						document.getElementById(
+							"result1_odd"
+						).innerHTML = `Số phần tử chẵn trong mảng là [${array1_odd}]`;
+					}
+				}
+				document.getElementById(
+					"result1_max_number"
+				).innerHTML = `Số phần tử lớn nhất trong mảng là [${Math.max(
+					...array1
+				)}]`;
+			}
+			let array1_primeNumber = [];
+			function check_array1_primeNumber() {
+				document.getElementById("result1_primeNumber").innerHTML = "";
+				for (let index = 0; index < array1.length; index++) {
+					// console.log(index);
+					// console.log(array1[index]);
+					if (array1[index] == 2 || array1[index] == 3) {
+						array1_primeNumber.push(array1[index]);
+						// console.log(array1[index]);
+						continue;
+					} else if (
+						array1[index] > 2 &&
+						array1[index] % 2 != 0 &&
+						array1[index] % Math.sqrt(array1[index]) != 0
+					) {
+						// console.log(array1[index]);
+						for (
+							let test_number = 2;
+							test_number < array1[index];
+							test_number++
+						) {
+							// console.log(test_number);
+							if (
+								array1[index] % test_number !== 0 &&
+								test_number < array1[index] - 1
+							) {
+								continue;
+							} else if (array1[index] % test_number == 0) {
+								break;
+							} else if (
+								test_number == array1[index] - 1 &&
+								array1[index] % test_number !== 0
+							) {
+								array1_primeNumber.push(array1[index]);
+								// console.log(array1[index]);
+							}
+						}
+					} else {
+						document.getElementById("result1_primeNumber").innerHTML =
+							"Mảng không tồn tại số nguyên tố";
+					}
+				}
+				document.getElementById(
+					"result1_primeNumber"
+				).innerHTML = `Số nguyên tố trong mảng là: ${array1_primeNumber}`;
+			}
+			let colorArray = array1;
+			let colorArray1 = [];
+			function print1_color() {
+				let colorDefault = "#000000";
+				let colorResult;
+				// console.log(colorArray);
+				for (
+					let colorIndex = 0;
+					colorIndex < colorArray.length;
+					colorIndex++
+				) {
+					let hex_color = colorArray[colorIndex].toString(16);
+					colorResult =
+						colorDefault.slice(
+							0,
+							colorDefault.length - hex_color.length
+						) + hex_color;
+					colorArray1.push(
+						`<font color = "${colorResult}">${colorArray[colorIndex]}</font>`
+					);
+					// console.log(colorResult);
+					// console.log(colorArray1);
+				}
+				2;
+				document.getElementById(
+					"result1"
+				).innerHTML = `Các phần tử trong mảng là {${colorArray1}}`;
+			}
+			function calculate() {
+				let arraylenght2 = parseInt(
+					document.getElementById("arraylength").value
+				);
+				console.log(arraylenght2);
+				let array2 = [];
+				let sum = 0;
+				for (let indexL = 0; indexL < arraylenght2; indexL++) {
+					array2[indexL] = parseInt(Math.random() * 21); //Random number with max value is 20
+					sum += array2[indexL];
+					console.log(array2[indexL]);
+				}
+				let text = array2.toString();
+				let arrayReplacement = text.replace(/,/g, "  ");
+				document.getElementById(
+					"displayArray2"
+				).value = `${arrayReplacement}`;
+				let Max = parseInt(Math.max(...array2));
+				let Min = parseInt(Math.min(...array2));
+				document.getElementById("displayMaxNumber").value = `${Max}`;
+				document.getElementById("displayMinNumber").value = `${Min}`;
+				document.getElementById("displaySum").value = `${sum}`;
+
+				console.log(array2);
+			}
+		</script>
+	</body>
+</html>
