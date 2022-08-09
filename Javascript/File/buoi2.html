@@ -40,7 +40,7 @@
 			<div id="result_primenumber"></div>
 			<div id="count"></div>
 		</div>
-		<script>
+		<script type="text/javascript">
 			var count = 0;
 			var numberInput = document.getElementById("nhap_so");
 			// nhấn phím enter
@@ -80,30 +80,44 @@
 					}
 					// Kiểm tra số nguyên tố
 					if (number === parseInt(number) && number >= 2) {
-						if (
-							number == 2 ||
-							number == 3 ||
-							number == 5 ||
-							number == 7
-						) {
+						if (number == 2) {
 							document.getElementById("result_primenumber").innerHTML =
 								"Đây là số nguyên tố";
 						} else if (
-							number != 2 &&
-							number != 3 &&
-							number != 5 &&
-							number != 7 &&
+							number > 2 &&
 							number % 2 != 0 &&
-							number % 3 != 0 &&
-							number % 5 != 0 &&
-							number % 7 != 0 &&
-							number % Math.sqrt(number) != 0
+							number % Math.sqrt(number) !== 0
 						) {
-							document.getElementById("result_primenumber").innerHTML =
-								"Đây là số nguyên tố";
+							console.log(number);
+							for (
+								let testNumber = 2;
+								testNumber < number;
+								testNumber++
+							) {
+								if (number % testNumber == 0) {
+									break;
+								} else if (
+									number % testNumber !== 0 &&
+									testNumber < number - 1
+								) {
+									console.log(testNumber);
+									continue;
+								} else if (
+									number % testNumber !== 0 &&
+									testNumber == number - 1
+								) {
+									console.log(testNumber);
+									document.getElementById(
+										"result_primenumber"
+									).innerHTML = "Đây là số nguyên tố";
+									break;
+								}
+								console.log(testNumber);
+							}
 						} else {
 							document.getElementById("result_primenumber").innerHTML =
 								"Đây không phải là số nguyên tố";
+							console.log(number);
 						}
 					} else {
 						document.getElementById("result_primenumber").innerHTML =
